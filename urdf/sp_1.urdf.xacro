@@ -2,8 +2,54 @@
 <!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
      Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
-<robot
-  name="sp_1">
+<robot xmlns:xacro="http://wiki.ros.org/xacro"  name="sp_1">
+
+
+<xacro:macro name="link_color">
+  <visual>
+    <material>
+      <ambient>0.501960784313725 1 0.501960784313725 1</ambient>
+      <diffuse>0.501960784313725 1 0.501960784313725 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <emissive>0 0 0 0</emissive>
+    </material>
+  </visual>
+</xacro:macro>
+
+<xacro:macro name="base_color">
+  <visual>
+    <material>
+      <ambient>0 0 0 1</ambient>
+      <diffuse>0 0 0 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <emissive>0 0 0 0</emissive>
+    </material>
+  </visual>
+</xacro:macro>
+
+<xacro:macro name="link2_color">
+  <visual>
+    <material>
+      <ambient>0.250980392156863 0.250980392156863 0.250980392156863 1</ambient>
+      <diffuse>0.250980392156863 0.250980392156863 0.250980392156863 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <emissive>0 0 0 0</emissive>
+    </material>
+  </visual>
+</xacro:macro>
+
+<link
+    name="dummy_link">
+    <pose>0 0 0 0 0 0</pose> 
+  </link>
+  <joint
+    name="dummy_joint" type="fixed">
+    <parent
+      link="dummy_link" />
+    <child
+      link="base_link" />
+  </joint>
+
   <link
     name="base_link">
     <inertial>
@@ -508,4 +554,39 @@
       effort="0"
       velocity="0" />
   </joint>
+
+  
+  <gazebo reference="link_3">
+    <xacro:link_color />
+  </gazebo>
+  <gazebo reference="link_5">
+    <xacro:link_color />
+  </gazebo>
+  <gazebo reference="link_7">
+    <xacro:link_color />
+  </gazebo>
+  <!-- <gazebo reference="end_effector">
+    <xacro:link_color />
+  </gazebo> -->
+
+
+  <gazebo reference="base_link">
+    <xacro:base_color />
+  </gazebo>
+  <gazebo reference="link_1">
+    <xacro:link2_color />
+  </gazebo>
+  <gazebo reference="link_2">
+    <xacro:link2_color />
+  </gazebo>
+  <gazebo reference="link_4">
+    <xacro:link2_color />
+  </gazebo>
+  <gazebo reference="link_6">
+    <xacro:link2_color />
+  </gazebo>
+  <gazebo reference="end_effector">
+    <xacro:link2_color />
+  </gazebo>
+
 </robot>
