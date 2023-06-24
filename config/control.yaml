@@ -1,0 +1,51 @@
+controller_joint_names: ['', 'joint_1', 'joint_2', 'joint_3', 'joint_4', 'joint_5', 'joint_6', 'joint_7', 'joint_8', ]
+
+sp_1:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Position Controllers ---------------------------------------
+
+  # Back Right
+  link1_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: "joint_1"
+    pid: {p: 2000.0, i: 10, d: 100.0}
+
+  link2_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: "joint_2"
+    pid: {p: 2000.0, i: 10, d: 100.0}
+
+  link3_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: "joint_3"
+    pid: {p: 2000.0, i: 10, d: 100.0}
+
+  link4_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: "joint_4"
+    pid: {p: 2000.0, i: 10, d: 100.0}
+
+  link5_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: "joint_5"
+    pid: {p: 2000.0, i: 10, d: 100.0}
+
+  link6_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: "joint_6"
+    pid: {p: 2000.0, i: 10, d: 100.0}
+
+  link7_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: "joint_7"
+    pid: {p: 2000.0, i: 10, d: 100.0}
+
+  end_effector_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: "joint_8"
+    pid: {p: 2000.0, i: 10, d: 100.0}
+  
